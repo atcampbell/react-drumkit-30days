@@ -1,5 +1,4 @@
 import React, { Fragment, useEffect, useRef } from 'react';
-import './App.css';
 import Audio from './components/Audio';
 import Key from './components/Key';
 
@@ -11,6 +10,14 @@ export default function App({ config }) {
             minHeight: '100vh',
             alignItems: 'center',
             justifyContent: 'center',
+        },
+        body: {
+            fontSize: '10px',
+            background: 'url(https://i.imgur.com/b9r5sEL.jpg) bottom center',
+            backgroundSize: 'cover',
+            margin: 0,
+            padding: 0,
+            fontFamily: 'sans-serif',
         },
     };
 
@@ -40,7 +47,7 @@ export default function App({ config }) {
     }, [config]);
 
     return (
-        <div className="App">
+        <div style={styles.body}>
             <div style={styles.keys}>
                 {config.map((sound, i) => (
                     <Fragment key={sound.keyCode}>
